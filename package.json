@@ -1,0 +1,31 @@
+{
+  "name": "TypeScript_Study_With_Book",
+  "version": "1.0.0",
+  "description": "## 컴파일러와 트랜스파일",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src",
+    "build": "tsc && node dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/choiseunghyeon/TypeScript_Study_With_Book.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/choiseunghyeon/TypeScript_Study_With_Book/issues"
+  },
+  "homepage": "https://github.com/choiseunghyeon/TypeScript_Study_With_Book#readme",
+  "dependencies": {
+    "chance": "^1.1.7",
+    "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.6",
+    "ts-node": "^9.0.0",
+    "tsc": "^1.20150623.0"
+  }
+}
