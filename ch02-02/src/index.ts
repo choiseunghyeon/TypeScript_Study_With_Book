@@ -8,9 +8,10 @@ const testMakePerson = ():void => {
 
 testMakePerson();
 
-type NumberToNumberFunc = (number) => number;
-const add = (one: number): NumberToNumberFunc => {
-    return (two: number): number => one+two;
-}
 
-console.log(add(1)(2));
+const numArr1: number[] = [1,2,3];
+const numArr2: number[] = [4,5];
+const numArr3: number[] = [...numArr1, ...numArr2];
+//        1    2   [ 3, 4, 5 ]
+const [first, two, ...rest] = numArr3;
+console.log(first, two, rest)

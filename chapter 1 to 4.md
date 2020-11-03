@@ -1,4 +1,9 @@
-# TypeScript_Study_With_Book
+# TypeScript_Study_With_Book 01장 ~ 04장
+
+## 이 문서에서 다루는 내용 개발 환경 / 프로젝트 생성 관리 / 객체와 타입 / 함수와 메서드
+
+**_ 이 문서에서는 Do it 타입스크립트 프로그래밍 책을 학습하고 이해한 내용을 공부 목적으로 정리한다. _**
+**_ 본인이 이해하기 쉽게 말을 풀어 쓰거나 개인적인 경험도 보태 이해를 돕고자 정리하였다. 이미 알고 있는 내용은 정리하지 않았다. _**
 
 ## 컴파일러와 트랜스파일
 
@@ -301,7 +306,7 @@ const add = (one: number, two: number): number => one + two
 
 **_일등 함수 살펴보기 p.96_**
 
-함수는 객체이고 변수에 담아서 사용할 수 있다는 것을 알았다.
+함수는 객체이고 변수에 담아서 사용할 수 있다는 것을 알았습니다.
 그렇다면 함수는 다른 함수의 매개변수로 전달될 수 있는데 이렇게 매개변수 형태로 동작하는 함수를 콜백 함수(callback function)라고 합니다.
 
 ```javascript
@@ -324,8 +329,8 @@ init(printLog)
 react에서 사용했던 HOC, redux thunk의 코드들을 이해할 수 있었던 제일 재밌는 부분이었다.
 고차 함수는 함수를 반환하는 함수를 의미한다.
 함수는 변수에 할당되고 함수의 파라미터로 전달될 수 있는 함수 표현식 이므로 이러한 함수표현식은 함수에 의해 반환될 수 있다.
-react에서 HOC(higher order component)는 컴포넌트를 반환하는 컴포넌트 이기 때문에 네이밍 에서 부터 어떤 의미인지 유추할 수 있다.
-ex. react-router-dom에서 withRouter나 react-redux에서 connect함수를 생각하면 이해하기 편하다. 또는 redux-thunk의 thunk creator가 바로 고차 함수다.
+react에서 HOC(higher order component)는 컴포넌트를 반환하는 컴포넌트 이기 때문에 HOC라는 네이밍 에서 부터 어떤 의미인지 유추할 수 있다.
+ex. react-router-dom에서 withRouter나 react-redux에서 connect함수를 생각하면 이해하기 편하다. 그리고 redux-thunk의 thunk creator가 바로 고차 함수다.
 
 클로저는 고차 함수 개념에서 반드시 필요한 개념으로 내부 함수에서 외부 함수의 값에 접근하여 사용하는 것을 말한다.
 아래 코드에서는 anotherAdd함수 내부에서 외부 함수 add의 파라미터 one에 접근하여 사용하고 있다. 이와 같은 형태를 클로저(closure)라고 한다.
@@ -339,3 +344,34 @@ const add = (one: number): NumberToNumberFunc => {
 
 console.log(add(1)(2))
 ```
+
+**_ 매개변수 기본 값(default parameter) _**
+
+```typescript
+function add(one: number, two: number = 2): number {
+  return one + two
+}
+// 3
+console.log(add(1))
+```
+
+**_ 색인 기능 타입(indexable type) p.103 _**
+indexable type을 통해 동적으로 객체의 키와 키값을 설정할 수 있다.
+
+```typescript
+type Person = {
+  name: string
+  [key: string]: string | number
+}
+
+const person: Person = {
+  name: "choi",
+  age: 24,
+  skill: "react",
+}
+```
+
+**_메서드 체이닝(Methods Chaining)_**
+
+이전에 정리했던 내용이 있어서 패스
+https://webigotr.tistory.com/280?category=248218
